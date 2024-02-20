@@ -23,12 +23,15 @@ bool overflow() {
 
 void PUSH_operation(char new_id[], char new_name[], char new_dob[], float new_cgpa) {
     if (!overflow()) {
+
         top++;
         strcpy(id[top], new_id);
         strcpy(name[top], new_name);
         strcpy(dob[top], new_dob);
         cgpa[top] = new_cgpa;
-    } else {
+    } 
+    
+    else {
         printf("Cannot PUSH element, OVERFLOW condition\n");
     }
 }
@@ -41,10 +44,14 @@ void POP_operation() {
     }
 }
 
-void DISPLAY() {
+void DISPLAY(FILE *ss) {
     printf("Test Output:\n");
     for (int i = top; i >= 0; i--) {
         printf("%s %s %s %.2f\n", id[i], name[i], dob[i], cgpa[i]);
+
+        
+        fprintf(ss, "%s, %s, %s, %lf", id[i], name[i], dob[i], cgpa[i]);
+        fprintf(ss, "\n");
     }
 }
 
@@ -64,7 +71,7 @@ int main() {
         PUSH_operation(new_id, new_name, new_dob, new_cgpa);
     }
 
-    DISPLAY();
+    DISPLAY(wP);
 
     fclose(rP);
     fclose(wP);
