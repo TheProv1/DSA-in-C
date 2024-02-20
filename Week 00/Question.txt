@@ -1,0 +1,9 @@
+1. Create a file studentout1.dat and write user input data “Implementing data structures would be fun.” into this file.
+
+2. Read the content of the file studentout1.dat and display it on console.
+
+3. Append at least 3 more user input lines into studentout1.dat.
+
+4. Copy the content from studentout1.dat file to another file studentout2.dat
+
+5. Count characters, words and lines in the studentout2.dat
